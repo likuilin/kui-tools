@@ -1,2 +1,3 @@
 # kui-tools
-stuff and things
+
+Tools and stuff. Expects to be at `~/os/tools`.

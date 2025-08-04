@@ -59,4 +59,7 @@ if status is-interactive
     abbr -a dnodesh 'docker run --rm -it -v (pwd):/work -w /work node:24-alpine3.20 sh'
     abbr -a dpy 'docker run --rm -it python:3.13.5-alpine3.21'
     abbr -a dpysh 'docker run --rm -it -v (pwd):/work -w /work python:3.13.5-alpine3.21 sh'
+
+    # path
+    fish_add_path ~/os/tools/bin
 end
