@@ -54,7 +54,8 @@ if status is-interactive
     abbr -a dc 'docker compose'
     abbr -a dclf 'docker compose logs -f'
     abbr -a dps 'docker container ls -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Size}}" | begin; sed -u 1q; sort -k2; end'
-    abbr -a lsb 'lsblk -o name,size,fstype,label,uuid,partlabel,partuuid,mountpoint'
+    abbr -a lsb 'lsblk -o name,size,fstype,label,partlabel,mountpoint'
+    abbr -a lsbu 'lsblk -o name,size,fstype,label,uuid,partlabel,partuuid,mountpoint'
 
     abbr -a dnode 'docker run --rm -it node:24-alpine3.20'
     abbr -a dnodesh 'docker run --rm -it -v (pwd):/work -w /work node:24-alpine3.20 sh'
