@@ -49,6 +49,9 @@ if status is-interactive
     # run this once as $__fish_cancel_text may not exist otherwise?
     __fish_cancel_commandline
 
+    # disable pushing tab to enter pager except for search
+    bind \t 'if not commandline -P; or commandline --search-field -C >/dev/null; commandline -f complete; end'
+
     # abbrs
     abbr -a persist-check 'sudo du -x / | grep -v ^0'
     abbr -a dc 'docker compose'
