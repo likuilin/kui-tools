@@ -54,13 +54,16 @@ if status is-interactive
     abbr -a dc 'docker compose'
     abbr -a dclf 'docker compose logs -f'
     abbr -a dps 'docker container ls -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Size}}" | begin; sed -u 1q; sort -k2; end'
-    abbr -a lsb 'lsblk -o name,size,fstype,label,partlabel,mountpoint'
-    abbr -a lsbu 'lsblk -o name,size,fstype,label,uuid,partlabel,partuuid,mountpoint'
+    abbr -a lsb 'lsblk -o name,fsused,size,fstype,label,partlabel,mountpoint'
+    abbr -a lsbu 'lsblk -o name,fsused,size,fstype,label,uuid,partlabel,partuuid,mountpoint'
 
     abbr -a dnode 'docker run --rm -it node:24-alpine3.20'
     abbr -a dnodesh 'docker run --rm -it -v (pwd):/work -w /work node:24-alpine3.20 sh'
     abbr -a dpy 'docker run --rm -it python:3.13.5-alpine3.21'
     abbr -a dpysh 'docker run --rm -it -v (pwd):/work -w /work python:3.13.5-alpine3.21 sh'
+
+    abbr -a pvd --set-cursor 'pv -d (% | string split " " | string join -- " -d ")'
+    abbr -a shbell 'tput bel; sleep 0.5; tput bel; sleep 1; tput bel; sleep 0.5; tput bel; sleep 1; tput bel'
 
     # path
     fish_add_path ~/os/tools/bin
