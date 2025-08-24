@@ -37,8 +37,7 @@ if status is-interactive
 
     # have ctrl-c on empty line not do nothing
     function custom_cancel
-        set -l cmd (commandline)
-        if test -n "$cmd"
+        if test -n (commandline)
             commandline -f cancel-commandline
         else
             echo -s $__fish_cancel_text
