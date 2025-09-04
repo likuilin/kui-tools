@@ -64,7 +64,6 @@ if status is-interactive
     abbr -a dpy 'docker run --rm -it python:3.13.5-alpine3.21'
     abbr -a dpysh 'docker run --rm -it -v (pwd):/work -w /work python:3.13.5-alpine3.21 sh'
 
-    abbr -a pvd --set-cursor 'pv -d (% | string split " " | string join -- " -d ")'
     abbr -a shbell 'tput bel; sleep 0.5; tput bel; sleep 1; tput bel; sleep 0.5; tput bel; sleep 1; tput bel'
 
     # path
