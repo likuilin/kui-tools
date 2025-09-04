@@ -72,15 +72,16 @@ def main():
         pvs[pid] = SubPV(pid, width)
         pids += [pid]
 
-    print("\033[s", end="") # save cursor
+    drawn_lines = 0
     for i, pid in enumerate(pids):
       if pvs[pid].check():
         print(f"[{i+1}] {pid}".ljust(width, " "))
         for line in pvs[pid].draw:
           print(line)
+        drawn_lines += len(pvs[pid].draw) + 1
 
     time.sleep(0.5) # pv repaints every second so half a second is plenty
-    print("\033[u", end="") # restore cursor
+    print("\r" + "\033[A"*drawn_lines, end="")
 
 def sigwinch(signum, frame):
   print("SIGWINCH not supported")
