@@ -49,7 +49,7 @@ class SubPV():
         assert(self.draw_cur >= 0)
         line = line[3:]
 
-      self.draw[self.draw_cur] = line.decode()
+      self.draw[self.draw_cur] = line.decode(errors='replace')
     return True
 
 def scan_processes(procname):
@@ -77,7 +77,7 @@ def main():
       if pvs[pid].check():
         print(f"[{i+1}] {pid}".ljust(width, " "))
         for line in pvs[pid].draw:
-          print(line)
+          print(line[:width])
         drawn_lines += len(pvs[pid].draw) + 1
 
     time.sleep(0.5) # pv repaints every second so half a second is plenty
